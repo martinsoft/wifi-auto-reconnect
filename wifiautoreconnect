@@ -3,7 +3,7 @@ WIFI_DEVICE=`networksetup -listallhardwareports | grep --after-context=1 Wi-Fi |
 
 
 function isNetworkReachable {
-  ping -q -o -t 5 -c 1 $ROUTER_IP_ADDRESS > /dev/null 2>&1
+  ping -q -o -t 5 -c 5 $ROUTER_IP_ADDRESS > /dev/null 2>&1
   if [ $? -eq 0 ]; then
     echo 1
   else
